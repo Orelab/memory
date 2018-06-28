@@ -1,0 +1,18 @@
+
+
+#configuration {
+	display: none;
+}
+
+
+.carte {
+	width: 98px;
+	height: 143px;
+	background-image: url(jeu.png);
+	float: left;
+}
+
+
+.cachee {
+	background-position: bottom 0 right 294px !important;
+}

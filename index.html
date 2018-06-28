@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Le jeu Memory !</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+
+
+	<div id="game" class="carreau">
+	</div>
+
+
+
+	<fieldset id="configuration">
+		<legend>Lancer une nouvelle partie</legend>
+
+		<label for="nom">Joueur</label>
+		<input type="text" name="nom" value="Orel" />
+		<br/>
+
+		<label for="ncartes">Nombre de cartes</label>
+		<select id="ncartes">
+			<option>4</option>
+			<option>8</option>
+			<option selected="selected">16</option>
+			<option>32</option>
+			<option>54</option>
+		</select>
+		<br/>
+
+		<button id="jouer">Jouer !</button>		
+	</fieldset>
+
+
+
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="evenements.js"></script>
+	<script type="text/javascript" src="fonctions.js"></script>
+
+</body>
+</html>
