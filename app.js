@@ -1,13 +1,16 @@
 
 
-var pending = []; // liste des cartes jouées
+// liste des cartes jouées
+var cartes_jouees = [];
 
-var joueur = ""; // nom du joueur
+// nom du joueur
+var joueur = "";
 
-var ncartes = 0; // nombre de cartes
+// nombre de cartes sur le plateau
+var ncartes = 0;
 
+// un jeu de 54 cartes
 var cartes = [
-	{couleur:3, valeur:13},
 	{couleur:3, valeur:12},
 	{couleur:3, valeur:11},
 	{couleur:3, valeur:10},
@@ -20,7 +23,7 @@ var cartes = [
 	{couleur:3, valeur:3},
 	{couleur:3, valeur:2},
 	{couleur:3, valeur:1},
-	{couleur:2, valeur:13},
+	{couleur:3, valeur:0},
 	{couleur:2, valeur:12},
 	{couleur:2, valeur:11},
 	{couleur:2, valeur:10},
@@ -33,7 +36,7 @@ var cartes = [
 	{couleur:2, valeur:3},
 	{couleur:2, valeur:2},
 	{couleur:2, valeur:1},
-	{couleur:1, valeur:13},
+	{couleur:2, valeur:0},
 	{couleur:1, valeur:12},
 	{couleur:1, valeur:11},
 	{couleur:1, valeur:10},
@@ -46,7 +49,7 @@ var cartes = [
 	{couleur:1, valeur:3},
 	{couleur:1, valeur:2},
 	{couleur:1, valeur:1},
-	{couleur:0, valeur:13},
+	{couleur:1, valeur:0},
 	{couleur:0, valeur:12},
 	{couleur:0, valeur:11},
 	{couleur:0, valeur:10},
@@ -58,6 +61,7 @@ var cartes = [
 	{couleur:0, valeur:4},
 	{couleur:0, valeur:3},
 	{couleur:0, valeur:2},
-	{couleur:0, valeur:1}
+	{couleur:0, valeur:1},
+	{couleur:0, valeur:0}
 ];
 

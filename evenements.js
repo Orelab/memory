@@ -1,12 +1,5 @@
 
 /*
-	Au chargement de la page => afficher la popup de configuration
-*/
-$('#configuration').show();
-
-
-
-/*
 	Bouton "Jouer" => fermer la popup
 */
 $('#jouer').on('click', function(){
@@ -29,20 +22,20 @@ $('#jouer').on('click', function(){
 	sont identiques. Si c'est le cas, on les fige en leur attribuant la 
 	classe .figee. En cas contraire, on retourne les deux dernières cartes
 	jouées. Pour réaliser tout ça, on tiens un registre de tous les coups 
-	joués dans la variable 'pending'.
+	joués dans la variable 'cartes_jouees'.
 */
 $('#game').delegate('.carte:not(.figee)', 'click', function(){
 
 	$(this).toggleClass('cachee');
 
-	pending.push(this);
+	cartes_jouees.push(this);
 
-	if( pending.length%2 != 0 ){
+	if( cartes_jouees.length%2 != 0 ){
 		return;
 	}
 
-	var last = pending[pending.length - 1];
-	var prev = pending[pending.length - 2];
+	var last = cartes_jouees[cartes_jouees.length - 1];
+	var prev = cartes_jouees[cartes_jouees.length - 2];
 
 	if( $(last).data('id') == $(prev).data('id') )
 	{

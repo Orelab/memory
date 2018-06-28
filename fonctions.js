@@ -64,10 +64,10 @@ function afficher_jeu()
 */
 function ajouter_carte( obj )
 {
-	var x = (obj.valeur-1) * 98;
+	var x = obj.valeur * 98;
 	var y = obj.couleur*1 * 143 + 143;
 
-	$('<div class="carte cachee" data-id="' + (obj.valeur-1) +'-'+ obj.couleur + '"></div>')
+	$('<div class="carte cachee" data-id="' + obj.valeur +'-'+ obj.couleur + '"></div>')
 		.css('background-position', 'bottom '+y+'px right '+x+'px')
 		.appendTo('#game');
 }
@@ -82,7 +82,7 @@ function ajouter_carte( obj )
 function tester_gagnant()
 {
 	if( $('.carte:not(.figee)').length == 0 ){
-		alert( joueur + ', tu as gagné en ' + (pending.length/2) + ' coups !' );
+		alert( joueur + ', tu as gagné en ' + (cartes_jouees.length/2) + ' coups !' );
 
 		setTimeout(function(){
 			$('#game').empty();
