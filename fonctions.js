@@ -2,6 +2,8 @@
 /*
 	Cette fonction affiche une popup qui permet de configurer 
 	une partie.
+	 - return vrai ou false, selon que la config s'est bien déroulée
+	 	(cela peut mal se passer si aucun nom de joueur n'est entré)
 */
 function configurer()
 {
@@ -22,6 +24,10 @@ function configurer()
 /*
 	Cette fonction retourne le bon nombre de cartes en prenant
 	soin que chaque carte soit présente en deux exemplaires.
+	 - param jeu : une liste de cartes (voir variable cartes)
+	 - return : une liste de cartes dont chaque carte est en double
+	 		et dont le nombre de cartes correspond à ce qu'a demandé
+	 		le joueur (4, 8, 32 ou 54)
 */
 function melanger_cartes( jeu )
 {
@@ -49,6 +55,13 @@ function afficher_jeu()
 	}
 }
 
+
+
+/*
+	Cette fonction ajoute une carte, elle est appelée par afficher_jeu()
+	 - param obj : un objet représentant une carte, tel que présenté 
+			dans la variable 'cartes'.
+*/
 function ajouter_carte( obj )
 {
 	var x = (obj.valeur-1) * 98;
