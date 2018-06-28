@@ -67,7 +67,7 @@ function ajouter_carte( obj )
 	var x = (obj.valeur-1) * 98;
 	var y = obj.couleur*1 * 143 + 143;
 
-	$('<div class="carte cachee ' + (obj.valeur-1) +'-'+ obj.couleur + '"></div>')
+	$('<div class="carte cachee" data-id="' + (obj.valeur-1) +'-'+ obj.couleur + '"></div>')
 		.css('background-position', 'bottom '+y+'px right '+x+'px')
 		.appendTo('#game');
 }

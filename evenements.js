@@ -24,16 +24,38 @@ $('#jouer').on('click', function(){
 
 
 /*
-	Quand on clique sur une carte
+	Quand on clique sur une carte...
+	Un coup sur deux, on vérifie si les deux dernières cartes cliquées
+	sont identiques. Si c'est le cas, on les fige en leur attribuant la 
+	classe .figee. En cas contraire, on retourne les deux dernières cartes
+	jouées. Pour réaliser tout ça, on tiens un registre de tous les coups 
+	joués dans la variable 'pending'.
 */
-$('#game').delegate('.carte', 'click', function(){
+$('#game').delegate('.carte:not(.figee)', 'click', function(){
 
-	if( $(this).hasClass('cachee') )
-	{
-		$(this).removeClass('cachee');
+	pending.push(this);
+
+	$(this).toggleClass('cachee');
+
+	if( pending.length%2 != 0 ){
+		return;
 	}
-	else
+console.log(pending);
+
+	var last = pending[pending.length - 1];
+	var prev = pending[pending.length - 2];
+
+	if( $(last).data('id') == $(prev).data('id') )	// Si cartes identiques
 	{
-		$(this).addClass('cachee');
+		$(last).addClass('figee');
+		$(prev).addClass('figee');
 	}
+	else	// Si cartes différentes
+	{
+		setTimeout(function(){
+			$(last).toggleClass('cachee');
+			$(prev).toggleClass('cachee');
+		}, 1000);
+	}
+
 });

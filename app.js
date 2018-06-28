@@ -1,7 +1,8 @@
 
 
+var pending = []; // liste des cartes jouées
 
-var joueur = "";
+var joueur = ""; // nom du joueur
 
 var ncartes = 0; // nombre de cartes
 
