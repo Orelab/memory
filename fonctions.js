@@ -75,6 +75,25 @@ function ajouter_carte( obj )
 
 
 /*
+	Cette fonction teste si toutes les cartes sont retournées.
+	Si c'est le cas, on donne le nombre de coups, puis on réinitialise
+	le jeu !
+*/
+function tester_gagnant()
+{
+	if( $('.carte:not(.figee)').length == 0 ){
+		alert( joueur + ', tu as gagné en ' + (pending.length/2) + ' coups !' );
+
+		setTimeout(function(){
+			$('#game').empty();
+			$('#configuration').show();
+		}, 1000);
+	}
+}
+
+
+
+/*
 	Mélanger un tableau
 	https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 */

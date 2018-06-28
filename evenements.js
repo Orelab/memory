@@ -33,25 +33,30 @@ $('#jouer').on('click', function(){
 */
 $('#game').delegate('.carte:not(.figee)', 'click', function(){
 
-	pending.push(this);
-
 	$(this).toggleClass('cachee');
+
+	pending.push(this);
 
 	if( pending.length%2 != 0 ){
 		return;
 	}
-console.log(pending);
 
 	var last = pending[pending.length - 1];
 	var prev = pending[pending.length - 2];
 
-	if( $(last).data('id') == $(prev).data('id') )	// Si cartes identiques
+	if( $(last).data('id') == $(prev).data('id') )
 	{
+		// Si cartes identiques
+
 		$(last).addClass('figee');
 		$(prev).addClass('figee');
+
+		tester_gagnant();
 	}
-	else	// Si cartes différentes
+	else
 	{
+		// Si cartes différentes
+
 		setTimeout(function(){
 			$(last).toggleClass('cachee');
 			$(prev).toggleClass('cachee');
